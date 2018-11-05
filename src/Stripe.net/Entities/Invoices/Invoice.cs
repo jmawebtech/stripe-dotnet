@@ -82,6 +82,7 @@ namespace Stripe
         #endregion
 
         [JsonProperty("date")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? Date { get; set; }
 
         [JsonProperty("description")]
@@ -94,6 +95,7 @@ namespace Stripe
         /// The date on which payment for this invoice is due. This value will be null for invoices where billing=charge_automatically.
         /// </summary>
         [JsonProperty("due_date")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? DueDate { get; set; }
 
         [JsonProperty("ending_balance")]
@@ -118,6 +120,7 @@ namespace Stripe
         public Dictionary<string, string> Metadata { get; set; }
 
         [JsonProperty("next_payment_attempt")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? NextPaymentAttempt { get; set; }
 
         /// <summary>
@@ -130,9 +133,11 @@ namespace Stripe
         public bool Paid { get; set; }
 
         [JsonProperty("period_end")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime PeriodEnd { get; set; }
 
         [JsonProperty("period_start")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime PeriodStart { get; set; }
 
         [JsonProperty("receipt_number")]
@@ -161,6 +166,7 @@ namespace Stripe
         #endregion
 
         [JsonProperty("subscription_proration_date")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime SubscriptionProrationDate { get; set; }
 
         [JsonProperty("subtotal")]
@@ -176,6 +182,7 @@ namespace Stripe
         public long Total { get; set; }
 
         [JsonProperty("webhooks_delivered_at")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? WebhooksDeliveredAt { get; set; }
     }
 }

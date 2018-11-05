@@ -45,6 +45,7 @@ namespace Stripe
         public long? ApplicationFeeAmount { get; set; }
 
         [JsonProperty("canceled_at")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? CanceledAt { get; set; }
 
         [JsonProperty("capture_method")]
@@ -60,6 +61,7 @@ namespace Stripe
         public string ConfirmationMethod { get; set; }
 
         [JsonProperty("created")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? Created { get; set; }
 
         [JsonProperty("currency")]

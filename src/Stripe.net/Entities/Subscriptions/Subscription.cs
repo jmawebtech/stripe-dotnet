@@ -23,21 +23,26 @@ namespace Stripe
         public Billing? Billing { get; set; }
 
         [JsonProperty("billing_cycle_anchor")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? BillingCycleAnchor { get; set; }
 
         [JsonProperty("cancel_at_period_end")]
         public bool CancelAtPeriodEnd { get; set; }
 
         [JsonProperty("canceled_at")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? CanceledAt { get; set; }
 
         [JsonProperty("created")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? Created { get; set; }
 
         [JsonProperty("current_period_end")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? CurrentPeriodEnd { get; set; }
 
         [JsonProperty("current_period_start")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? CurrentPeriodStart { get; set; }
 
         #region Expandable Customer
@@ -66,6 +71,7 @@ namespace Stripe
         public Discount Discount { get; set; }
 
         [JsonProperty("ended_at")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? EndedAt { get; set; }
 
         [JsonProperty("items")]
@@ -84,6 +90,7 @@ namespace Stripe
         public long? Quantity { get; set; }
 
         [JsonProperty("start")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? Start { get; set; }
 
         [JsonProperty("status")]
@@ -93,9 +100,11 @@ namespace Stripe
         public decimal? TaxPercent { get; set; }
 
         [JsonProperty("trial_end")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? TrialEnd { get; set; }
 
         [JsonProperty("trial_start")]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime? TrialStart { get; set; }
     }
 }
